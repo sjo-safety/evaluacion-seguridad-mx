@@ -102,7 +102,7 @@
 </div>
 
 <script>
-var GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzfUByYPBCJVTJQq3eEAcHdMrqXyJ_OCKBslYKImmLGbJkAhPBxjAA4Hn6C1hrdPPin/exec';
+var GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbw-_Lnzc6Xq6WwtSnHUU1WXYi9md3mOyK8aYMnepVYG-KcLEcEMkreqVq_s-AZgwn74gw/exec';
 
 function mezclar(arr) {
     var a = arr.slice();
@@ -413,11 +413,23 @@ form.addEventListener('submit', function(e) {
         respuestas: respuestasDetalle
     };
 
+    
+    // Crear FormData para enviar como formulario (compatible con no-cors)
+    var formDataToSend = new FormData();
+    formDataToSend.append('timestamp', formData.timestamp);
+    formDataToSend.append('nombre', formData.nombre);
+    formDataToSend.append('cedula', formData.cedula);
+    formDataToSend.append('correo', formData.correo);
+    formDataToSend.append('empresa', formData.empresa);
+    formDataToSend.append('puntaje', formData.puntaje);
+    formDataToSend.append('porcentaje', formData.porcentaje);
+    formDataToSend.append('calificacion', formData.calificacion);
+
     fetch(GOOGLE_SCRIPT_URL, {
         method: 'POST',
         mode: 'no-cors',
-        headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify(formData)
+        body: formDataToSend
+    })
     }).then(function() {
         loading.style.display = 'none';
         form.style.display = 'none';
