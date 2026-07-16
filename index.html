@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Evaluación de Seguridad y Salud</title>
+    <title>Evaluacion de Seguridad y Salud</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: Arial, sans-serif; background: linear-gradient(135deg, #FF9900 0%, #146EB4 100%); padding: 20px; min-height: 100vh; }
@@ -46,12 +46,12 @@
 <div class="container">
 
     <div class="header">
-        <h1>Evaluación de Seguridad y Salud</h1>
-        <p class="subtitle">Esta evaluación consta de 14 preguntas: 4 de información general + 10 de conocimientos</p>
+        <h1>Evaluacion de Seguridad y Salud</h1>
+        <p class="subtitle">Esta evaluacion consta de 14 preguntas: 4 de informacion general + 10 de conocimientos</p>
     </div>
 
     <div class="nota-minima">
-        <p><strong>⚠️ NOTA MÍNIMA PARA APROBAR: 80% (8 de 10 preguntas correctas)</strong></p>
+        <p><strong>NOTA MINIMA PARA APROBAR: 80% (8 de 10 preguntas correctas)</strong></p>
     </div>
 
     <div class="progress">
@@ -60,17 +60,17 @@
 
     <form id="evaluationForm">
         <div class="section">
-            <div class="section-title">📝 Información General</div>
+            <div class="section-title">Informacion General</div>
             <div class="question">
                 <div class="question-text">1. Nombre completo <span class="required">*</span></div>
                 <input type="text" id="nombre" name="nombre" required placeholder="Ingrese su nombre completo">
             </div>
             <div class="question">
-                <div class="question-text">2. Número de cédula <span class="required">*</span></div>
+                <div class="question-text">2. Numero de cedula <span class="required">*</span></div>
                 <input type="text" id="cedula" name="cedula" required placeholder="Ej: 1-2345-6789">
             </div>
             <div class="question">
-                <div class="question-text">3. Correo electrónico <span class="required">*</span></div>
+                <div class="question-text">3. Correo electronico <span class="required">*</span></div>
                 <input type="email" id="correo" name="correo" required placeholder="ejemplo@empresa.com">
             </div>
             <div class="question">
@@ -80,11 +80,11 @@
         </div>
 
         <div class="section">
-            <div class="section-title">🎯 Evaluación de Conocimientos (10 preguntas aleatorias de 50)</div>
+            <div class="section-title">Evaluacion de Conocimientos (10 preguntas aleatorias de 50)</div>
             <div id="randomQuestions"></div>
         </div>
 
-        <button type="submit" class="submit-btn" id="submitBtn">✓ Enviar Evaluación</button>
+        <button type="submit" class="submit-btn" id="submitBtn">Enviar Evaluacion</button>
     </form>
 
     <div class="loading" id="loading">
@@ -93,7 +93,7 @@
     </div>
 
     <div class="result-container" id="resultContainer">
-        <h2>¡Evaluación Completada!</h2>
+        <h2>Evaluacion Completada!</h2>
         <div class="score-display" id="scoreDisplay"></div>
         <div class="score-message" id="scoreMessage"></div>
         <div class="success-badge" id="scoreBadge"></div>
@@ -102,7 +102,7 @@
 </div>
 
 <script>
-var GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbw-_Lnzc6Xq6WwtSnHUU1WXYi9md3mOyK8aYMnepVYG-KcLEcEMkreqVq_s-AZgwn74gw/exec';
+var GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyBultyXPZwV23bHfc8OSQA1QD-V1Fhc6BaS6L9NGzbQJ8VEwV7hXDxFp8JnpS5jSh8sw/exec';
 
 function mezclar(arr) {
     var a = arr.slice();
@@ -114,210 +114,207 @@ function mezclar(arr) {
 }
 
 var bankPreguntas = [
-    {id:1, pregunta:"¿Está permitido fumar o vapear dentro de las instalaciones?",
-     opciones:["No, está completamente prohibido en todo momento","Solo en áreas exteriores designadas con señalización","Está permitido durante los tiempos de descanso fuera del área operativa","Depende de la política del contratista que ingresa al sitio"],
-     respuestaCorrecta:"No, está completamente prohibido en todo momento"},
+    {id:1, pregunta:"Esta permitido fumar o vapear dentro de las instalaciones?",
+     opciones:["No, esta completamente prohibido en todo momento","Solo en areas exteriores designadas con senalizacion","Esta permitido durante los tiempos de descanso fuera del area operativa","Depende de la politica del contratista que ingresa al sitio"],
+     respuestaCorrecta:"No, esta completamente prohibido en todo momento"},
 
-    {id:2, pregunta:"¿Qué requisito es indispensable antes de operar equipos o maquinaria en el sitio?",
-     opciones:["Contar con capacitación y autorización documentada para ese equipo específico","Haber trabajado al menos 6 meses en la empresa","Tener el EPP completo puesto antes de iniciar","Solicitar permiso verbal al supervisor de turno"],
-     respuestaCorrecta:"Contar con capacitación y autorización documentada para ese equipo específico"},
+    {id:2, pregunta:"Que requisito es indispensable antes de operar equipos o maquinaria en el sitio?",
+     opciones:["Contar con capacitacion y autorizacion documentada para ese equipo especifico","Haber trabajado al menos 6 meses en la empresa","Tener el EPP completo puesto antes de iniciar","Solicitar permiso verbal al supervisor de turno"],
+     respuestaCorrecta:"Contar con capacitacion y autorizacion documentada para ese equipo especifico"},
 
-    {id:3, pregunta:"¿Qué acción está estrictamente prohibida en las rutas de evacuación?",
-     opciones:["Colocar materiales, equipos u objetos que las obstruyan","Caminar por ellas durante la jornada laboral normal","Utilizarlas como acceso principal al área de trabajo","Señalizarlas con flechas adicionales no autorizadas"],
+    {id:3, pregunta:"Que accion esta estrictamente prohibida en las rutas de evacuacion?",
+     opciones:["Colocar materiales, equipos u objetos que las obstruyan","Caminar por ellas durante la jornada laboral normal","Utilizarlas como acceso principal al area de trabajo","Senalizarlas con flechas adicionales no autorizadas"],
      respuestaCorrecta:"Colocar materiales, equipos u objetos que las obstruyan"},
 
-    {id:4, pregunta:"¿Cuál es la política respecto a trabajar bajo efectos de alcohol o sustancias ilícitas?",
-     opciones:["Está completamente prohibido; el trabajador debe retirarse del sitio","Se permite si la sustancia fue prescrita por un médico","Se evalúa caso por caso según el tipo de trabajo a realizar","Está prohibido solo en áreas de alto riesgo como alturas o espacios confinados"],
-     respuestaCorrecta:"Está completamente prohibido; el trabajador debe retirarse del sitio"},
+    {id:4, pregunta:"Cual es la politica respecto a trabajar bajo efectos de alcohol o sustancias ilicitas?",
+     opciones:["Esta completamente prohibido; el trabajador debe retirarse del sitio","Se permite si la sustancia fue prescrita por un medico","Se evalua caso por caso segun el tipo de trabajo a realizar","Esta prohibido solo en areas de alto riesgo como alturas o espacios confinados"],
+     respuestaCorrecta:"Esta completamente prohibido; el trabajador debe retirarse del sitio"},
 
-    {id:5, pregunta:"Al realizar trabajos que puedan generar calor, chispas o humo, ¿qué debe evitarse para no comprometer el sistema de protección contra incendios?",
-     opciones:["Activar las alarmas o rociadores innecesariamente sin coordinación previa","Usar extintores portátiles sin haber recibido capacitación","Trabajar sin el permiso de trabajo en caliente correspondiente","Realizar el trabajo sin notificar al equipo de seguridad del sitio"],
-     respuestaCorrecta:"Activar las alarmas o rociadores innecesariamente sin coordinación previa"},
+    {id:5, pregunta:"Al realizar trabajos que puedan generar calor, chispas o humo, que debe evitarse para no comprometer el sistema de proteccion contra incendios?",
+     opciones:["Activar las alarmas o rociadores innecesariamente sin coordinacion previa","Usar extintores portatiles sin haber recibido capacitacion","Trabajar sin el permiso de trabajo en caliente correspondiente","Realizar el trabajo sin notificar al equipo de seguridad del sitio"],
+     respuestaCorrecta:"Activar las alarmas o rociadores innecesariamente sin coordinacion previa"},
 
-    {id:6, pregunta:"¿Cuál es la política sobre el uso de dispositivos móviles para fotografiar o grabar en áreas restringidas?",
-     opciones:["Está restringido; se requiere autorización expresa por escrito","Está permitido siempre que sea para documentar condiciones inseguras","Se permite solo si el dispositivo no tiene flash activo","Está permitido para supervisores y personal de seguridad sin restricción"],
-     respuestaCorrecta:"Está restringido; se requiere autorización expresa por escrito"},
+    {id:6, pregunta:"Cual es la politica sobre el uso de dispositivos moviles para fotografiar o grabar en areas restringidas?",
+     opciones:["Esta restringido; se requiere autorizacion expresa por escrito","Esta permitido siempre que sea para documentar condiciones inseguras","Se permite solo si el dispositivo no tiene flash activo","Esta permitido para supervisores y personal de seguridad sin restriccion"],
+     respuestaCorrecta:"Esta restringido; se requiere autorizacion expresa por escrito"},
 
-    {id:7, pregunta:"¿Qué comportamiento representa un riesgo de seguridad que debe evitarse en el lugar de trabajo?",
-     opciones:["Realizar bromas físicas o distracciones que puedan provocar accidentes","Comunicar condiciones inseguras al supervisor inmediato","Usar EPP aunque no sea obligatorio en esa área específica","Seguir los procedimientos aunque ralenticen el trabajo"],
-     respuestaCorrecta:"Realizar bromas físicas o distracciones que puedan provocar accidentes"},
+    {id:7, pregunta:"Que comportamiento representa un riesgo de seguridad que debe evitarse en el lugar de trabajo?",
+     opciones:["Realizar bromas fisicas o distracciones que puedan provocar accidentes","Comunicar condiciones inseguras al supervisor inmediato","Usar EPP aunque no sea obligatorio en esa area especifica","Seguir los procedimientos aunque ralenticen el trabajo"],
+     respuestaCorrecta:"Realizar bromas fisicas o distracciones que puedan provocar accidentes"},
 
-    {id:8, pregunta:"¿Qué implica el principio de 'tener ojos y mente en la tarea' durante el trabajo?",
-     opciones:["Mantener la concentración plena, evitar la prisa y anticipar riesgos en cada paso","Usar lentes de seguridad certificados en todo momento dentro del sitio","Supervisar visualmente el trabajo de los compañeros para detectar errores","Revisar el procedimiento escrito antes de iniciar cualquier actividad"],
-     respuestaCorrecta:"Mantener la concentración plena, evitar la prisa y anticipar riesgos en cada paso"},
+    {id:8, pregunta:"Que implica el principio de tener ojos y mente en la tarea durante el trabajo?",
+     opciones:["Mantener la concentracion plena, evitar la prisa y anticipar riesgos en cada paso","Usar lentes de seguridad certificados en todo momento dentro del sitio","Supervisar visualmente el trabajo de los companeros para detectar errores","Revisar el procedimiento escrito antes de iniciar cualquier actividad"],
+     respuestaCorrecta:"Mantener la concentracion plena, evitar la prisa y anticipar riesgos en cada paso"},
 
-    {id:9, pregunta:"¿Qué debe hacer un trabajador si necesita ingresar a un área de acceso restringido?",
-     opciones:["Mantenerse fuera hasta obtener la autorización correspondiente","Ingresar brevemente si considera que es una situación urgente","Puede ingresar si va acompañado de otro trabajador del mismo contratista","Ingresar solo si porta el EPP completo requerido para esa área"],
-     respuestaCorrecta:"Mantenerse fuera hasta obtener la autorización correspondiente"},
+    {id:9, pregunta:"Que debe hacer un trabajador si necesita ingresar a un area de acceso restringido?",
+     opciones:["Mantenerse fuera hasta obtener la autorizacion correspondiente","Ingresar brevemente si considera que es una situacion urgente","Puede ingresar si va acompanado de otro trabajador del mismo contratista","Ingresar solo si porta el EPP completo requerido para esa area"],
+     respuestaCorrecta:"Mantenerse fuera hasta obtener la autorizacion correspondiente"},
 
-    {id:10, pregunta:"¿Cuál es una condición fundamental que debe mantenerse en el área de trabajo en todo momento?",
-     opciones:["Orden y limpieza para prevenir accidentes y facilitar la evacuación","Iluminación artificial constante independientemente de la luz natural","Temperatura ambiente controlada entre 18 y 24 grados Celsius","Ventilación mecánica activa durante toda la jornada laboral"],
-     respuestaCorrecta:"Orden y limpieza para prevenir accidentes y facilitar la evacuación"},
+    {id:10, pregunta:"Cual es una condicion fundamental que debe mantenerse en el area de trabajo en todo momento?",
+     opciones:["Orden y limpieza para prevenir accidentes y facilitar la evacuacion","Iluminacion artificial constante independientemente de la luz natural","Temperatura ambiente controlada entre 18 y 24 grados Celsius","Ventilacion mecanica activa durante toda la jornada laboral"],
+     respuestaCorrecta:"Orden y limpieza para prevenir accidentes y facilitar la evacuacion"},
 
-    {id:11, pregunta:"¿Cuál es el estándar mínimo que debe cumplir toda área donde se realicen trabajos?",
-     opciones:["Debe estar correctamente barricada, señalizada y delimitada según los peligros identificados","Debe contar con iluminación artificial de al menos 500 lux en toda su extensión","Debe tener acceso a agua potable y servicios sanitarios a menos de 50 metros","Debe estar pintada con colores de seguridad según la norma ANSI Z535"],
-     respuestaCorrecta:"Debe estar correctamente barricada, señalizada y delimitada según los peligros identificados"},
+    {id:11, pregunta:"Cual es el estandar minimo que debe cumplir toda area donde se realicen trabajos?",
+     opciones:["Debe estar correctamente barricada, senalizada y delimitada segun los peligros identificados","Debe contar con iluminacion artificial de al menos 500 lux en toda su extension","Debe tener acceso a agua potable y servicios sanitarios a menos de 50 metros","Debe estar pintada con colores de seguridad segun la norma ANSI Z535"],
+     respuestaCorrecta:"Debe estar correctamente barricada, senalizada y delimitada segun los peligros identificados"},
 
-    {id:12, pregunta:"¿Cuál de los siguientes elementos NO es un tipo de señalización válida para delimitar barricadas de seguridad?",
-     opciones:["Plantas ornamentales o decorativas","Cadenas con señales de advertencia","Conos de tráfico reflectivos","Cintas de precaución o peligro"],
+    {id:12, pregunta:"Cual de los siguientes elementos NO es un tipo de senalizacion valida para delimitar barricadas de seguridad?",
+     opciones:["Plantas ornamentales o decorativas","Cadenas con senales de advertencia","Conos de trafico reflectivos","Cintas de precaucion o peligro"],
      respuestaCorrecta:"Plantas ornamentales o decorativas"},
 
-    {id:13, pregunta:"Al identificar peligros en un área de trabajo, ¿qué debe definirse obligatoriamente?",
-     opciones:["Las zonas peatonales y de tránsito seguro para el personal","El horario permitido para ejecutar las tareas de mayor riesgo","Los colores de señalización que deben usarse en cada zona","La cantidad mínima de trabajadores requeridos para iniciar la tarea"],
-     respuestaCorrecta:"Las zonas peatonales y de tránsito seguro para el personal"},
+    {id:13, pregunta:"Al identificar peligros en un area de trabajo, que debe definirse obligatoriamente?",
+     opciones:["Las zonas peatonales y de transito seguro para el personal","El horario permitido para ejecutar las tareas de mayor riesgo","Los colores de senalizacion que deben usarse en cada zona","La cantidad minima de trabajadores requeridos para iniciar la tarea"],
+     respuestaCorrecta:"Las zonas peatonales y de transito seguro para el personal"},
 
-    {id:14, pregunta:"¿Cuál de los siguientes elementos es apropiado para construir una barricada de seguridad?",
-     opciones:["Mallas de seguridad certificadas","Cajas de cartón apiladas","Sillas o mobiliario de oficina","Bolsas de material de construcción"],
+    {id:14, pregunta:"Cual de los siguientes elementos es apropiado para construir una barricada de seguridad?",
+     opciones:["Mallas de seguridad certificadas","Cajas de carton apiladas","Sillas o mobiliario de oficina","Bolsas de material de construccion"],
      respuestaCorrecta:"Mallas de seguridad certificadas"},
 
-    {id:15, pregunta:"¿Cuál es el propósito principal de instalar barricadas en áreas de trabajo?",
-     opciones:["Proteger a las personas de peligros identificados y controlar el acceso al área","Delimitar la propiedad del contratista dentro de las instalaciones","Cumplir con un requisito administrativo del permiso de trabajo","Organizar el flujo de materiales y equipos durante la ejecución del trabajo"],
-     respuestaCorrecta:"Proteger a las personas de peligros identificados y controlar el acceso al área"},
+    {id:15, pregunta:"Cual es el proposito principal de instalar barricadas en areas de trabajo?",
+     opciones:["Proteger a las personas de peligros identificados y controlar el acceso al area","Delimitar la propiedad del contratista dentro de las instalaciones","Cumplir con un requisito administrativo del permiso de trabajo","Organizar el flujo de materiales y equipos durante la ejecucion del trabajo"],
+     respuestaCorrecta:"Proteger a las personas de peligros identificados y controlar el acceso al area"},
 
-    {id:16, pregunta:"¿Cuál es el primer paso correcto en el proceso de evaluación para seleccionar el EPP adecuado?",
-     opciones:["Identificar y evaluar los peligros específicos a los que estará expuesto el trabajador","Consultar el catálogo de EPP disponible en el almacén del contratista","Revisar qué EPP utilizan los compañeros que realizan tareas similares","Solicitar al supervisor que indique qué equipo debe usarse para la tarea"],
-     respuestaCorrecta:"Identificar y evaluar los peligros específicos a los que estará expuesto el trabajador"},
+    {id:16, pregunta:"Cual es el primer paso correcto en el proceso de evaluacion para seleccionar el EPP adecuado?",
+     opciones:["Identificar y evaluar los peligros especificos a los que estara expuesto el trabajador","Consultar el catalogo de EPP disponible en el almacen del contratista","Revisar que EPP utilizan los companeros que realizan tareas similares","Solicitar al supervisor que indique que equipo debe usarse para la tarea"],
+     respuestaCorrecta:"Identificar y evaluar los peligros especificos a los que estara expuesto el trabajador"},
 
-    {id:17, pregunta:"¿En qué circunstancia específica es obligatorio el uso de EPP?",
-     opciones:["Cuando el peligro persiste después de haber aplicado controles de eliminación o reducción","Siempre que se ingrese a cualquier área dentro de las instalaciones del sitio","Solo cuando el supervisor lo indica expresamente antes de iniciar la tarea","Únicamente en trabajos clasificados como de alto riesgo según la normativa"],
-     respuestaCorrecta:"Cuando el peligro persiste después de haber aplicado controles de eliminación o reducción"},
+    {id:17, pregunta:"En que circunstancia especifica es obligatorio el uso de EPP?",
+     opciones:["Cuando el peligro persiste despues de haber aplicado controles de eliminacion o reduccion","Siempre que se ingrese a cualquier area dentro de las instalaciones del sitio","Solo cuando el supervisor lo indica expresamente antes de iniciar la tarea","Unicamente en trabajos clasificados como de alto riesgo segun la normativa"],
+     respuestaCorrecta:"Cuando el peligro persiste despues de haber aplicado controles de eliminacion o reduccion"},
 
-    {id:18, pregunta:"Antes de seleccionar el EPP apropiado para una tarea, ¿qué paso previo es indispensable?",
-     opciones:["Identificar y aplicar medidas para eliminar o reducir el peligro en la fuente","Verificar que el EPP disponible esté dentro del presupuesto del proyecto","Consultar con los compañeros qué EPP han usado en tareas similares anteriores","Esperar las instrucciones específicas del área de seguridad del sitio"],
+    {id:18, pregunta:"Antes de seleccionar el EPP apropiado para una tarea, que paso previo es indispensable?",
+     opciones:["Identificar y aplicar medidas para eliminar o reducir el peligro en la fuente","Verificar que el EPP disponible este dentro del presupuesto del proyecto","Consultar con los companeros que EPP han usado en tareas similares anteriores","Esperar las instrucciones especificas del area de seguridad del sitio"],
      respuestaCorrecta:"Identificar y aplicar medidas para eliminar o reducir el peligro en la fuente"},
 
-    {id:19, pregunta:"¿Cuál es la posición correcta del EPP dentro de la jerarquía de controles de riesgos?",
-     opciones:["Es el último recurso, aplicable solo cuando no es posible eliminar o reducir el peligro","Es la primera medida a implementar por ser la más rápida y económica","Tiene igual prioridad que los controles de ingeniería y administrativos","Es obligatorio independientemente de si existen otros controles implementados"],
-     respuestaCorrecta:"Es el último recurso, aplicable solo cuando no es posible eliminar o reducir el peligro"},
+    {id:19, pregunta:"Cual es la posicion correcta del EPP dentro de la jerarquia de controles de riesgos?",
+     opciones:["Es el ultimo recurso, aplicable solo cuando no es posible eliminar o reducir el peligro","Es la primera medida a implementar por ser la mas rapida y economica","Tiene igual prioridad que los controles de ingenieria y administrativos","Es obligatorio independientemente de si existen otros controles implementados"],
+     respuestaCorrecta:"Es el ultimo recurso, aplicable solo cuando no es posible eliminar o reducir el peligro"},
 
-    {id:20, pregunta:"Después de implementar medidas de control de riesgos, ¿qué verificación es obligatoria?",
-     opciones:["Confirmar que los peligros fueron efectivamente eliminados o reducidos a un nivel aceptable","Documentar el costo total de las medidas implementadas para el informe del proyecto","Verificar que el EPP seleccionado esté disponible en el inventario del contratista","Registrar el color y tipo de señalización utilizada en el área intervenida"],
+    {id:20, pregunta:"Despues de implementar medidas de control de riesgos, que verificacion es obligatoria?",
+     opciones:["Confirmar que los peligros fueron efectivamente eliminados o reducidos a un nivel aceptable","Documentar el costo total de las medidas implementadas para el informe del proyecto","Verificar que el EPP seleccionado este disponible en el inventario del contratista","Registrar el color y tipo de senalizacion utilizada en el area intervenida"],
      respuestaCorrecta:"Confirmar que los peligros fueron efectivamente eliminados o reducidos a un nivel aceptable"},
 
-    {id:21, pregunta:"¿Cuál es la antigüedad máxima permitida para las Hojas de Datos de Seguridad (SDS) de los químicos utilizados?",
-     opciones:["No hay fecha máxima, se actualiza cada que existe un cambio","5 años si el fabricante no ha actualizado la fórmula del producto","3 años para químicos clasificados como de alta peligrosidad","1 año para cualquier químico utilizado en espacios cerrados o confinados"],
-     respuestaCorrecta:"No hay fecha máxima, se actualiza cada que existe un cambio"},
+    {id:21, pregunta:"Cual es la antiguedad maxima permitida para las Hojas de Datos de Seguridad (SDS) de los quimicos utilizados?",
+     opciones:["No hay fecha maxima, se actualiza cada que existe un cambio","5 anos si el fabricante no ha actualizado la formula del producto","3 anos para quimicos clasificados como de alta peligrosidad","1 ano para cualquier quimico utilizado en espacios cerrados o confinados"],
+     respuestaCorrecta:"No hay fecha maxima, se actualiza cada que existe un cambio"},
 
-    {id:22, pregunta:"¿En qué condición deben mantenerse los envases de productos químicos en el área de trabajo?",
-     opciones:["Sellados, sin derrames y con rotulación visible según el sistema de etiquetado aplicable","Abiertos para facilitar la ventilación y evitar acumulación de presión interna","En cualquier condición mientras el contenido sea identificable por el trabajador","Transparentes o traslúcidos para verificar visualmente el nivel del contenido"],
-     respuestaCorrecta:"Sellados, sin derrames y con rotulación visible según el sistema de etiquetado aplicable"},
+    {id:22, pregunta:"En que condicion deben mantenerse los envases de productos quimicos en el area de trabajo?",
+     opciones:["Sellados, sin derrames y con rotulacion visible segun el sistema de etiquetado aplicable","Abiertos para facilitar la ventilacion y evitar acumulacion de presion interna","En cualquier condicion mientras el contenido sea identificable por el trabajador","Transparentes o traslucidos para verificar visualmente el nivel del contenido"],
+     respuestaCorrecta:"Sellados, sin derrames y con rotulacion visible segun el sistema de etiquetado aplicable"},
 
-    {id:23, pregunta:"¿Qué sistema de etiquetado es obligatorio para los envases de productos químicos en el sitio?",
-     opciones:["SGA (Sistema Globalmente Armonizado), según corresponda","Etiquetas personalizadas elaboradas por el contratista con la información relevante","Código de barras o QR vinculado a la ficha técnica del producto en línea","Etiquetas adhesivas con el nombre del producto y fecha de ingreso al sitio"],
-     respuestaCorrecta:"SGA (Sistema Globalmente Armonizado), según corresponda"},
+    {id:23, pregunta:"Que sistema de etiquetado es obligatorio para los envases de productos quimicos en el sitio?",
+     opciones:["SGA (Sistema Globalmente Armonizado), segun corresponda","Etiquetas personalizadas elaboradas por el contratista con la informacion relevante","Codigo de barras o QR vinculado a la ficha tecnica del producto en linea","Etiquetas adhesivas con el nombre del producto y fecha de ingreso al sitio"],
+     respuestaCorrecta:"SGA (Sistema Globalmente Armonizado), segun corresponda"},
 
-    {id:24, pregunta:"¿Qué elemento de respuesta es obligatorio tener disponible en el área donde se manejan productos químicos?",
-     opciones:["Kit para control de derrames adecuado al tipo y volumen de químico utilizado","Ventilador industrial para dispersar vapores en caso de derrame accidental","Agua embotellada para dilución inmediata en caso de contacto con la piel","Teléfono celular cargado para contactar al servicio de emergencias externo"],
-     respuestaCorrecta:"Kit para control de derrames adecuado al tipo y volumen de químico utilizado"},
+    {id:24, pregunta:"Que elemento de respuesta es obligatorio tener disponible en el area donde se manejan productos quimicos?",
+     opciones:["Kit para control de derrames adecuado al tipo y volumen de quimico utilizado","Ventilador industrial para dispersar vapores en caso de derrame accidental","Agua embotellada para dilucion inmediata en caso de contacto con la piel","Telefono celular cargado para contactar al servicio de emergencias externo"],
+     respuestaCorrecta:"Kit para control de derrames adecuado al tipo y volumen de quimico utilizado"},
 
-    {id:25, pregunta:"¿Qué categoría de productos químicos debe evitarse prioritariamente en las operaciones del sitio?",
-     opciones:["Químicos de alta peligrosidad para la salud o clasificados como altamente inflamables","Cualquier producto químico en presentación líquida que supere un litro de volumen","Productos importados que no cuenten con etiqueta en idioma español","Químicos de color oscuro o que no sean transparentes en su presentación"],
-     respuestaCorrecta:"Químicos de alta peligrosidad para la salud o clasificados como altamente inflamables"},
+    {id:25, pregunta:"Que categoria de productos quimicos debe evitarse prioritariamente en las operaciones del sitio?",
+     opciones:["Quimicos de alta peligrosidad para la salud o clasificados como altamente inflamables","Cualquier producto quimico en presentacion liquida que supere un litro de volumen","Productos importados que no cuenten con etiqueta en idioma espanol","Quimicos de color oscuro o que no sean transparentes en su presentacion"],
+     respuestaCorrecta:"Quimicos de alta peligrosidad para la salud o clasificados como altamente inflamables"},
 
-    {id:26, pregunta:"¿Cuál es la política respecto al uso de fajas lumbares durante el trabajo?",
-     opciones:["No están permitidas; no sustituyen la técnica correcta de levantamiento","Son obligatorias para cualquier tarea que implique levantar más de 15 kg","Se permiten únicamente con prescripción médica documentada y vigente","Son opcionales y queda a criterio del trabajador si desea utilizarlas"],
-     respuestaCorrecta:"No están permitidas; no sustituyen la técnica correcta de levantamiento"},
+    {id:26, pregunta:"Cual es la politica respecto al uso de fajas lumbares durante el trabajo?",
+     opciones:["No estan permitidas; no sustituyen la tecnica correcta de levantamiento","Son obligatorias para cualquier tarea que implique levantar mas de 15 kg","Se permiten unicamente con prescripcion medica documentada y vigente","Son opcionales y queda a criterio del trabajador si desea utilizarlas"],
+     respuestaCorrecta:"No estan permitidas; no sustituyen la tecnica correcta de levantamiento"},
 
-    {id:27, pregunta:"¿Cuál es la técnica biomecánicamente correcta para levantar una carga del suelo?",
-     opciones:["Flexionar las rodillas, mantener la espalda recta y usar la fuerza de las piernas","Mantener las piernas extendidas y doblar la espalda para alcanzar la carga","Inclinarse desde la cintura con las piernas semiflexionadas para distribuir el peso","Realizar movimientos rápidos y continuos para reducir el tiempo de exposición"],
+    {id:27, pregunta:"Cual es la tecnica biomecanicamente correcta para levantar una carga del suelo?",
+     opciones:["Flexionar las rodillas, mantener la espalda recta y usar la fuerza de las piernas","Mantener las piernas extendidas y doblar la espalda para alcanzar la carga","Inclinarse desde la cintura con las piernas semiflexionadas para distribuir el peso","Realizar movimientos rapidos y continuos para reducir el tiempo de exposicion"],
      respuestaCorrecta:"Flexionar las rodillas, mantener la espalda recta y usar la fuerza de las piernas"},
 
-    {id:28, pregunta:"¿Qué estructura anatómica se protege principalmente al aplicar la técnica correcta de levantamiento de cargas?",
-     opciones:["La columna vertebral y la zona lumbar, previniendo hernias y lesiones discales","Los tendones y ligamentos de los brazos y hombros durante el esfuerzo","Las articulaciones de las manos y muñecas al sostener la carga","Los músculos de los pies y tobillos al soportar el peso adicional"],
+    {id:28, pregunta:"Que estructura anatomica se protege principalmente al aplicar la tecnica correcta de levantamiento de cargas?",
+     opciones:["La columna vertebral y la zona lumbar, previniendo hernias y lesiones discales","Los tendones y ligamentos de los brazos y hombros durante el esfuerzo","Las articulaciones de las manos y munecas al sostener la carga","Los musculos de los pies y tobillos al soportar el peso adicional"],
      respuestaCorrecta:"La columna vertebral y la zona lumbar, previniendo hernias y lesiones discales"},
 
-    {id:29, pregunta:"¿Cuántas categorías básicas de separación de residuos sólidos se manejan típicamente en los sistemas de gestión ambiental?",
-     opciones:["Entre 3 y 5 categorías según el sistema implementado en el sitio","Exactamente 2: residuos reciclables y residuos no reciclables","10 categorías según la clasificación internacional de residuos sólidos","Una sola categoría general para facilitar la gestión del contratista"],
-     respuestaCorrecta:"Entre 3 y 5 categorías según el sistema implementado en el sitio"},
+    {id:29, pregunta:"Cuantas categorias basicas de separacion de residuos solidos se manejan tipicamente en los sistemas de gestion ambiental?",
+     opciones:["Entre 3 y 5 categorias segun el sistema implementado en el sitio","Exactamente 2: residuos reciclables y residuos no reciclables","10 categorias segun la clasificacion internacional de residuos solidos","Una sola categoria general para facilitar la gestion del contratista"],
+     respuestaCorrecta:"Entre 3 y 5 categorias segun el sistema implementado en el sitio"},
 
-    {id:30, pregunta:"¿Cuál es la responsabilidad del contratista respecto a los residuos especiales o peligrosos que genera?",
-     opciones:["Gestionar su disposición final con empresa autorizada y presentar certificación de disposición","Dejarlos en el contenedor general del sitio al finalizar la jornada de trabajo","Quemarlos en área designada si no existe empresa gestora disponible en la zona","Enterrarlos en área perimetral del sitio siguiendo las indicaciones del supervisor"],
-     respuestaCorrecta:"Gestionar su disposición final con empresa autorizada y presentar certificación de disposición"},
+    {id:30, pregunta:"Cual es la responsabilidad del contratista respecto a los residuos especiales o peligrosos que genera?",
+     opciones:["Gestionar su disposicion final con empresa autorizada y presentar certificacion de disposicion","Dejarlos en el contenedor general del sitio al finalizar la jornada de trabajo","Quemarlos en area designada si no existe empresa gestora disponible en la zona","Enterrarlos en area perimetral del sitio siguiendo las indicaciones del supervisor"],
+     respuestaCorrecta:"Gestionar su disposicion final con empresa autorizada y presentar certificacion de disposicion"},
 
-    {id:31, pregunta:"¿Cuál de los siguientes materiales corresponde a la categoría de residuos reciclables valorizables?",
-     opciones:["Papel y cartón limpio sin contaminación con alimentos o químicos","Residuos orgánicos de alimentos generados en el área de trabajo","Residuos no valorizables mezclados con material de construcción","Residuos peligrosos como trapos impregnados con aceite o solventes"],
-     respuestaCorrecta:"Papel y cartón limpio sin contaminación con alimentos o químicos"},
+    {id:31, pregunta:"Cual de los siguientes materiales corresponde a la categoria de residuos reciclables valorizables?",
+     opciones:["Papel y carton limpio sin contaminacion con alimentos o quimicos","Residuos organicos de alimentos generados en el area de trabajo","Residuos no valorizables mezclados con material de construccion","Residuos peligrosos como trapos impregnados con aceite o solventes"],
+     respuestaCorrecta:"Papel y carton limpio sin contaminacion con alimentos o quimicos"},
 
-    {id:32, pregunta:"¿Quién tiene la responsabilidad directa de gestionar adecuadamente los residuos generados durante la ejecución de un trabajo?",
-     opciones:["El contratista que ejecuta el trabajo y genera los residuos","El área de operaciones del sitio donde se realiza el trabajo","El servicio de limpieza contratado por la empresa principal","Cualquier persona presente en el área al momento de generarse el residuo"],
+    {id:32, pregunta:"Quien tiene la responsabilidad directa de gestionar adecuadamente los residuos generados durante la ejecucion de un trabajo?",
+     opciones:["El contratista que ejecuta el trabajo y genera los residuos","El area de operaciones del sitio donde se realiza el trabajo","El servicio de limpieza contratado por la empresa principal","Cualquier persona presente en el area al momento de generarse el residuo"],
      respuestaCorrecta:"El contratista que ejecuta el trabajo y genera los residuos"},
 
-    {id:33, pregunta:"¿Qué tipo de escaleras portátiles están autorizadas para trabajos en instalaciones con presencia de sistemas eléctricos?",
-     opciones:["Escaleras de fibra de vidrio por sus propiedades dieléctricas no conductoras","Escaleras de aluminio por su ligereza y resistencia estructural certificada","Escaleras de madera tratada con barniz aislante homologado","Escaleras de acero inoxidable con recubrimiento plástico en los peldaños"],
-     respuestaCorrecta:"Escaleras de fibra de vidrio por sus propiedades dieléctricas no conductoras"},
+    {id:33, pregunta:"Que tipo de escaleras portatiles estan autorizadas para trabajos en instalaciones con presencia de sistemas electricos?",
+     opciones:["Escaleras de fibra de vidrio por sus propiedades dielectricas no conductoras","Escaleras de aluminio por su ligereza y resistencia estructural certificada","Escaleras de madera tratada con barniz aislante homologado","Escaleras de acero inoxidable con recubrimiento plastico en los peldanos"],
+     respuestaCorrecta:"Escaleras de fibra de vidrio por sus propiedades dielectricas no conductoras"},
 
-    {id:34, pregunta:"¿Qué documento habilitante es obligatorio obtener antes de iniciar cualquier trabajo en alturas?",
-     opciones:["Permiso de trabajo en alturas emitido y firmado por la autoridad competente del sitio","Permiso de conducir vigente con categoría para vehículos de elevación","Certificado médico de aptitud física emitido en los últimos 30 días","Licencia comercial del contratista con cobertura para trabajos en altura"],
+    {id:34, pregunta:"Que documento habilitante es obligatorio obtener antes de iniciar cualquier trabajo en alturas?",
+     opciones:["Permiso de trabajo en alturas emitido y firmado por la autoridad competente del sitio","Permiso de conducir vigente con categoria para vehiculos de elevacion","Certificado medico de aptitud fisica emitido en los ultimos 30 dias","Licencia comercial del contratista con cobertura para trabajos en altura"],
      respuestaCorrecta:"Permiso de trabajo en alturas emitido y firmado por la autoridad competente del sitio"},
 
-    {id:35, pregunta:"¿Qué plan de contingencia es obligatorio tener documentado y disponible para trabajos en alturas?",
-     opciones:["Plan de rescate en alturas con procedimientos, recursos y personal capacitado","Plan de negocios del contratista con cobertura de seguros para accidentes","Plan de marketing del proyecto que incluya protocolos de comunicación de incidentes","Plan de capacitación anual del personal en técnicas de trabajo en alturas"],
+    {id:35, pregunta:"Que plan de contingencia es obligatorio tener documentado y disponible para trabajos en alturas?",
+     opciones:["Plan de rescate en alturas con procedimientos, recursos y personal capacitado","Plan de negocios del contratista con cobertura de seguros para accidentes","Plan de marketing del proyecto que incluya protocolos de comunicacion de incidentes","Plan de capacitacion anual del personal en tecnicas de trabajo en alturas"],
      respuestaCorrecta:"Plan de rescate en alturas con procedimientos, recursos y personal capacitado"},
 
-    {id:36, pregunta:"¿En qué condición debe encontrarse el equipo de protección para trabajos en alturas antes de su uso?",
-     opciones:["Certificado por organismo competente, inspeccionado y en buen estado de funcionamiento","Usado previamente pero sin daños visibles a simple vista en la inspección ocular","Nuevo y sin uso previo, con empaque original del fabricante intacto","En cualquier estado siempre que el trabajador lo considere funcional para la tarea"],
+    {id:36, pregunta:"En que condicion debe encontrarse el equipo de proteccion para trabajos en alturas antes de su uso?",
+     opciones:["Certificado por organismo competente, inspeccionado y en buen estado de funcionamiento","Usado previamente pero sin danos visibles a simple vista en la inspeccion ocular","Nuevo y sin uso previo, con empaque original del fabricante intacto","En cualquier estado siempre que el trabajador lo considere funcional para la tarea"],
      respuestaCorrecta:"Certificado por organismo competente, inspeccionado y en buen estado de funcionamiento"},
 
-    {id:37, pregunta:"¿Cómo se definen los trabajos en caliente en el contexto de seguridad industrial?",
-     opciones:["Trabajos que generan chispas, llama abierta, calor intenso o arco eléctrico","Trabajos realizados al aire libre bajo condiciones de alta temperatura ambiental","Trabajos ejecutados durante los meses de verano o en zonas de clima tropical","Trabajos que involucran el manejo de agua caliente o vapor a presión"],
-     respuestaCorrecta:"Trabajos que generan chispas, llama abierta, calor intenso o arco eléctrico"},
+    {id:37, pregunta:"Como se definen los trabajos en caliente en el contexto de seguridad industrial?",
+     opciones:["Trabajos que generan chispas, llama abierta, calor intenso o arco electrico","Trabajos realizados al aire libre bajo condiciones de alta temperatura ambiental","Trabajos ejecutados durante los meses de verano o en zonas de clima tropical","Trabajos que involucran el manejo de agua caliente o vapor a presion"],
+     respuestaCorrecta:"Trabajos que generan chispas, llama abierta, calor intenso o arco electrico"},
 
-{id:38, pregunta:"¿Qué conocimiento técnico adicional debe poseer el personal que ejecuta trabajos en caliente?",
-     opciones:["Técnicas de combate y control de incendios con extintores portátiles","Técnicas avanzadas de primeros auxilios y reanimación cardiopulmonar","Conocimientos de instalaciones eléctricas y sistemas de puesta a tierra","Técnicas de plomería y manejo de sistemas de tuberías a presión"],
-     respuestaCorrecta:"Técnicas de combate y control de incendios con extintores portátiles"},
+    {id:38, pregunta:"Que conocimiento tecnico adicional debe poseer el personal que ejecuta trabajos en caliente?",
+     opciones:["Tecnicas de combate y control de incendios con extintores portatiles","Tecnicas avanzadas de primeros auxilios y reanimacion cardiopulmonar","Conocimientos de instalaciones electricas y sistemas de puesta a tierra","Tecnicas de plomeria y manejo de sistemas de tuberias a presion"],
+     respuestaCorrecta:"Tecnicas de combate y control de incendios con extintores portatiles"},
 
-    {id:39, pregunta:"¿Qué tipo de EPP especializado se requiere para la ejecución de trabajos en caliente?",
-     opciones:["EPP específico para trabajos en caliente: careta, guantes y ropa resistente a llama","EPP estándar de construcción: casco, chaleco reflectivo y botas con punta de acero","Únicamente guantes de cuero grueso y careta facial de policarbonato transparente","Solo casco dieléctrico y botas con suela antideslizante certificada"],
-     respuestaCorrecta:"EPP específico para trabajos en caliente: careta, guantes y ropa resistente a llama"},
+    {id:39, pregunta:"Que tipo de EPP especializado se requiere para la ejecucion de trabajos en caliente?",
+     opciones:["EPP especifico para trabajos en caliente: careta, guantes y ropa resistente a llama","EPP estandar de construccion: casco, chaleco reflectivo y botas con punta de acero","Unicamente guantes de cuero grueso y careta facial de policarbonato transparente","Solo casco dielectrico y botas con suela antideslizante certificada"],
+     respuestaCorrecta:"EPP especifico para trabajos en caliente: careta, guantes y ropa resistente a llama"},
 
-    {id:40, pregunta:"¿Qué plan de control de energía es obligatorio implementar antes de iniciar trabajos eléctricos?",
-     opciones:["Plan LOTO (Lockout/Tagout) para el bloqueo y etiquetado de fuentes de energía","Plan de emergencia eléctrica con rutas de evacuación específicas para el área","Plan de evacuación del edificio actualizado con los nuevos puntos de riesgo eléctrico","Plan de comunicación interna para notificar al personal sobre los trabajos eléctricos"],
-     respuestaCorrecta:"Plan LOTO (Lockout/Tagout) para el bloqueo y etiquetado de fuentes de energía"},
+    {id:40, pregunta:"Que plan de control de energia es obligatorio implementar antes de iniciar trabajos electricos?",
+     opciones:["Plan LOTO (Lockout/Tagout) para el bloqueo y etiquetado de fuentes de energia","Plan de emergencia electrica con rutas de evacuacion especificas para el area","Plan de evacuacion del edificio actualizado con los nuevos puntos de riesgo electrico","Plan de comunicacion interna para notificar al personal sobre los trabajos electricos"],
+     respuestaCorrecta:"Plan LOTO (Lockout/Tagout) para el bloqueo y etiquetado de fuentes de energia"},
 
-    {id:41, pregunta:"¿Qué tipo de EPP es indispensable para la ejecución de trabajos en instalaciones eléctricas energizadas?",
-     opciones:["EPP dieléctrico certificado: guantes, botas y herramientas aisladas según el nivel de voltaje","EPP estándar de construcción con énfasis en protección de manos y pies","Únicamente guantes de cuero grueso y calzado con suela de goma no certificada","Solo botas dieléctricas sin necesidad de protección adicional para las manos"],
-     respuestaCorrecta:"EPP dieléctrico certificado: guantes, botas y herramientas aisladas según el nivel de voltaje"},
+    {id:41, pregunta:"Que tipo de EPP es indispensable para la ejecucion de trabajos en instalaciones electricas energizadas?",
+     opciones:["EPP dielectrico certificado: guantes, botas y herramientas aisladas segun el nivel de voltaje","EPP estandar de construccion con enfasis en proteccion de manos y pies","Unicamente guantes de cuero grueso y calzado con suela de goma no certificada","Solo botas dielectricas sin necesidad de proteccion adicional para las manos"],
+     respuestaCorrecta:"EPP dielectrico certificado: guantes, botas y herramientas aisladas segun el nivel de voltaje"},
 
-    {id:42, pregunta:"¿Qué verificación crítica debe realizarse antes de iniciar cualquier trabajo en instalaciones eléctricas?",
-     opciones:["Confirmar cero presencia de energía mediante instrumento de medición calibrado","Medir la temperatura ambiente para descartar riesgo de sobrecalentamiento del equipo","Verificar la humedad relativa del área para evaluar el riesgo de conductividad","Medir la presión atmosférica para determinar el riesgo de arco eléctrico"],
-     respuestaCorrecta:"Confirmar cero presencia de energía mediante instrumento de medición calibrado"},
+    {id:42, pregunta:"Que verificacion critica debe realizarse antes de iniciar cualquier trabajo en instalaciones electricas?",
+     opciones:["Confirmar cero presencia de energia mediante instrumento de medicion calibrado","Medir la temperatura ambiente para descartar riesgo de sobrecalentamiento del equipo","Verificar la humedad relativa del area para evaluar el riesgo de conductividad","Medir la presion atmosferica para determinar el riesgo de arco electrico"],
+     respuestaCorrecta:"Confirmar cero presencia de energia mediante instrumento de medicion calibrado"},
 
-    {id:43, pregunta:"¿Qué tipo de mediciones son obligatorias antes de ingresar a un espacio confinado?",
-     opciones:["Mediciones de atmósfera: oxígeno, gases inflamables y contaminantes tóxicos","Mediciones de temperatura interna para garantizar condiciones de confort térmico","Mediciones de nivel de ruido para determinar si se requiere protección auditiva","Mediciones de intensidad lumínica para verificar la visibilidad dentro del espacio"],
-     respuestaCorrecta:"Mediciones de atmósfera: oxígeno, gases inflamables y contaminantes tóxicos"},
+    {id:43, pregunta:"Que tipo de mediciones son obligatorias antes de ingresar a un espacio confinado?",
+     opciones:["Mediciones de atmosfera: oxigeno, gases inflamables y contaminantes toxicos","Mediciones de temperatura interna para garantizar condiciones de confort termico","Mediciones de nivel de ruido para determinar si se requiere proteccion auditiva","Mediciones de intensidad luminica para verificar la visibilidad dentro del espacio"],
+     respuestaCorrecta:"Mediciones de atmosfera: oxigeno, gases inflamables y contaminantes toxicos"},
 
-    {id:44, pregunta:"¿Qué equipo especializado es obligatorio tener disponible durante trabajos en espacios confinados?",
-     opciones:["Equipo de rescate completo con arnés, trípode y sistema de elevación certificado","Equipo de comunicación bidireccional para mantener contacto con el exterior","Equipo de iluminación de emergencia con autonomía mínima de 4 horas","Equipo de ventilación forzada para garantizar renovación constante del aire"],
-     respuestaCorrecta:"Equipo de rescate completo con arnés, trípode y sistema de elevación certificado"},
+    {id:44, pregunta:"Que equipo especializado es obligatorio tener disponible durante trabajos en espacios confinados?",
+     opciones:["Equipo de rescate completo con arnes, tripode y sistema de elevacion certificado","Equipo de comunicacion bidireccional para mantener contacto con el exterior","Equipo de iluminacion de emergencia con autonomia minima de 4 horas","Equipo de ventilacion forzada para garantizar renovacion constante del aire"],
+     respuestaCorrecta:"Equipo de rescate completo con arnes, tripode y sistema de elevacion certificado"},
 
-    {id:45, pregunta:"¿Cómo debe responder el personal ante la activación de una alarma de evacuación, independientemente del contexto?",
-     opciones:["Tratarla siempre como una emergencia real y evacuar de inmediato por la ruta asignada","Evaluar primero si se trata de un simulacro antes de iniciar la evacuación","Ignorarla si está en medio de una tarea crítica que no puede interrumpirse","Esperar confirmación del supervisor antes de abandonar el puesto de trabajo"],
+    {id:45, pregunta:"Como debe responder el personal ante la activacion de una alarma de evacuacion, independientemente del contexto?",
+     opciones:["Tratarla siempre como una emergencia real y evacuar de inmediato por la ruta asignada","Evaluar primero si se trata de un simulacro antes de iniciar la evacuacion","Ignorarla si esta en medio de una tarea critica que no puede interrumpirse","Esperar confirmacion del supervisor antes de abandonar el puesto de trabajo"],
      respuestaCorrecta:"Tratarla siempre como una emergencia real y evacuar de inmediato por la ruta asignada"},
 
-    {id:46, pregunta:"¿Qué medio de evacuación vertical está prohibido utilizar durante un terremoto o emergencia con riesgo de fallo eléctrico?",
-     opciones:["Ascensores y montacargas, ya que pueden quedar atrapados ante un corte de energía","Escaleras de emergencia, ya que pueden estar congestionadas con otras personas","Rampas de acceso para personas con discapacidad, reservadas para uso exclusivo","Escaleras mecánicas, ya que pueden invertir su dirección durante la emergencia"],
-     respuestaCorrecta:"Ascensores y montacargas, ya que pueden quedar atrapados ante un corte de energía"},
+    {id:46, pregunta:"Que medio de evacuacion vertical esta prohibido utilizar durante un terremoto o emergencia con riesgo de fallo electrico?",
+     opciones:["Ascensores y montacargas, ya que pueden quedar atrapados ante un corte de energia","Escaleras de emergencia, ya que pueden estar congestionadas con otras personas","Rampas de acceso para personas con discapacidad, reservadas para uso exclusivo","Escaleras mecanicas, ya que pueden invertir su direccion durante la emergencia"],
+     respuestaCorrecta:"Ascensores y montacargas, ya que pueden quedar atrapados ante un corte de energia"},
 
-    {id:47, pregunta:"¿Cuál es la acción prioritaria al detectar humo, fuego o señales de incendio en el área de trabajo?",
-     opciones:["Activar la alarma de incendios de inmediato y alertar al personal cercano","Intentar extinguir el fuego con el extintor más cercano antes de activar la alarma","Tomar evidencia fotográfica para el reporte de incidente antes de actuar","Buscar el extintor adecuado y evaluar si el fuego puede controlarse de forma segura"],
+    {id:47, pregunta:"Cual es la accion prioritaria al detectar humo, fuego o senales de incendio en el area de trabajo?",
+     opciones:["Activar la alarma de incendios de inmediato y alertar al personal cercano","Intentar extinguir el fuego con el extintor mas cercano antes de activar la alarma","Tomar evidencia fotografica para el reporte de incidente antes de actuar","Buscar el extintor adecuado y evaluar si el fuego puede controlarse de forma segura"],
      respuestaCorrecta:"Activar la alarma de incendios de inmediato y alertar al personal cercano"},
 
-    {id:48, pregunta:"¿A quién debe contactarse de forma inmediata ante una emergencia médica en el sitio?",
-     opciones:["Al Safety Ambassador, médico de sitio u oficial de seguridad designado para emergencias","Directamente al servicio de emergencias externo (911) sin notificar al personal interno","Al supervisor inmediato del trabajador afectado para que tome la decisión de acción","A cualquier compañero de trabajo que tenga conocimientos básicos de primeros auxilios"],
-     respuestaCorrecta:"Al Safety Ambassador, médico de sitio u oficial de seguridad designado para emergencias"},
+    {id:48, pregunta:"A quien debe contactarse de forma inmediata ante una emergencia medica en el sitio?",
+     opciones:["Al Safety Ambassador, medico de sitio u oficial de seguridad designado para emergencias","Directamente al servicio de emergencias externo (911) sin notificar al personal interno","Al supervisor inmediato del trabajador afectado para que tome la decision de accion","A cualquier companero de trabajo que tenga conocimientos basicos de primeros auxilios"],
+     respuestaCorrecta:"Al Safety Ambassador, medico de sitio u oficial de seguridad designado para emergencias"},
 
-    {id:49, pregunta:"¿Bajo qué condición está permitido reingresar al edificio después de una evacuación de emergencia?",
-     opciones:["Solo cuando los Safety Ambassadors o el comandante de incidentes autoricen el reingreso","Cuando el trabajador considere que el peligro ha pasado y sea seguro volver","Si olvidó objetos personales o documentos importantes dentro del edificio","Después de 15 minutos de evacuación si no se ha recibido ninguna instrucción adicional"],
+    {id:49, pregunta:"Bajo que condicion esta permitido reingresar al edificio despues de una evacuacion de emergencia?",
+     opciones:["Solo cuando los Safety Ambassadors o el comandante de incidentes autoricen el reingreso","Cuando el trabajador considere que el peligro ha pasado y sea seguro volver","Si olvido objetos personales o documentos importantes dentro del edificio","Despues de 15 minutos de evacuacion si no se ha recibido ninguna instruccion adicional"],
      respuestaCorrecta:"Solo cuando los Safety Ambassadors o el comandante de incidentes autoricen el reingreso"},
 
-    {id:50, pregunta:"Durante un terremoto, si no es posible refugiarse bajo un escritorio o mesa resistente, ¿cuál es la acción correcta?",
-     opciones:["Acercarse a una pared interior alejada de ventanas, sentarse y proteger la cabeza con los brazos","Correr hacia la salida de emergencia más cercana para evacuar el edificio de inmediato","Quedarse de pie junto a una columna estructural y agarrarse firmemente a ella","Salir por la ventana si se está en el primer piso para evitar el colapso del edificio"],
+    {id:50, pregunta:"Durante un terremoto, si no es posible refugiarse bajo un escritorio o mesa resistente, cual es la accion correcta?",
+     opciones:["Acercarse a una pared interior alejada de ventanas, sentarse y proteger la cabeza con los brazos","Correr hacia la salida de emergencia mas cercana para evacuar el edificio de inmediato","Quedarse de pie junto a una columna estructural y agarrarse firmemente a ella","Salir por la ventana si se esta en el primer piso para evitar el colapso del edificio"],
      respuestaCorrecta:"Acercarse a una pared interior alejada de ventanas, sentarse y proteger la cabeza con los brazos"}
 ];
-   
-// ============================================================
-// SELECCIÓN ALEATORIA DE 10 PREGUNTAS Y MEZCLA DE OPCIONES
-// ============================================================
+
 var preguntasSeleccionadas = mezclar(bankPreguntas).slice(0, 10);
 var preguntasRenderizadas = [];
 
@@ -333,9 +330,6 @@ for (var i = 0; i < preguntasSeleccionadas.length; i++) {
     });
 }
 
-// ============================================================
-// RENDERIZAR PREGUNTAS EN EL DOM
-// ============================================================
 var qContainer = document.getElementById('randomQuestions');
 for (var i = 0; i < preguntasRenderizadas.length; i++) {
     var pr = preguntasRenderizadas[i];
@@ -351,23 +345,27 @@ for (var i = 0; i < preguntasRenderizadas.length; i++) {
     qContainer.appendChild(div);
 }
 
-// ============================================================
-// BARRA DE PROGRESO
-// ============================================================
 var form = document.getElementById('evaluationForm');
 var progressBar = document.getElementById('progressBar');
 form.addEventListener('change', function() {
-    var filled = Array.from(form.elements).filter(function(el) {
-        return (el.type === 'text' && el.value.trim() !== '') ||
-               (el.type === 'email' && el.value.trim() !== '') ||
-               (el.type === 'radio' && el.checked);
-    }).length;
+    var filled = 0;
+    var elements = form.elements;
+    var radioNames = [];
+    for (var i = 0; i < elements.length; i++) {
+        var el = elements[i];
+        if ((el.type === 'text' || el.type === 'email') && el.value.trim() !== '') {
+            filled++;
+        }
+        if (el.type === 'radio' && el.checked) {
+            if (radioNames.indexOf(el.name) === -1) {
+                radioNames.push(el.name);
+                filled++;
+            }
+        }
+    }
     progressBar.style.width = (filled / 14) * 100 + '%';
 });
 
-// ============================================================
-// ENVÍO DEL FORMULARIO
-// ============================================================
 form.addEventListener('submit', function(e) {
     e.preventDefault();
 
@@ -400,36 +398,20 @@ form.addEventListener('submit', function(e) {
     var porcentaje = (correctas / 10) * 100;
     var aprobado = porcentaje >= 80;
 
-    var formData = {
-        timestamp: new Date().toLocaleString('es-CR', {timeZone: 'America/Costa_Rica'}),
-        nombre: document.getElementById('nombre').value,
-        cedula: document.getElementById('cedula').value,
-        correo: document.getElementById('correo').value,
-        empresa: document.getElementById('empresa').value,
-        puntaje: correctas + '/10',
-        porcentaje: porcentaje.toFixed(1) + '%',
-        calificacion: aprobado ? 'APROBADO' : 'REPROBADO',
-        preguntas_ids: preguntasRenderizadas.map(function(pr) { return pr.id; }).join(', '),
-        respuestas: respuestasDetalle
-    };
-
-    
-    // Crear FormData para enviar como formulario (compatible con no-cors)
     var formDataToSend = new FormData();
-    formDataToSend.append('timestamp', formData.timestamp);
-    formDataToSend.append('nombre', formData.nombre);
-    formDataToSend.append('cedula', formData.cedula);
-    formDataToSend.append('correo', formData.correo);
-    formDataToSend.append('empresa', formData.empresa);
-    formDataToSend.append('puntaje', formData.puntaje);
-    formDataToSend.append('porcentaje', formData.porcentaje);
-    formDataToSend.append('calificacion', formData.calificacion);
+    formDataToSend.append('timestamp', new Date().toLocaleString('es-CR', {timeZone: 'America/Costa_Rica'}));
+    formDataToSend.append('nombre', document.getElementById('nombre').value);
+    formDataToSend.append('cedula', document.getElementById('cedula').value);
+    formDataToSend.append('correo', document.getElementById('correo').value);
+    formDataToSend.append('empresa', document.getElementById('empresa').value);
+    formDataToSend.append('puntaje', correctas + '/10');
+    formDataToSend.append('porcentaje', porcentaje.toFixed(1) + '%');
+    formDataToSend.append('calificacion', aprobado ? 'APROBADO' : 'REPROBADO');
 
     fetch(GOOGLE_SCRIPT_URL, {
         method: 'POST',
         mode: 'no-cors',
         body: formDataToSend
-    })
     }).then(function() {
         loading.style.display = 'none';
         form.style.display = 'none';
@@ -437,27 +419,25 @@ form.addEventListener('submit', function(e) {
 
         document.getElementById('scoreDisplay').textContent = correctas + '/10';
         document.getElementById('scoreMessage').textContent = porcentaje.toFixed(1) + '%';
-        document.getElementById('scoreBadge').textContent = aprobado ? 'APROBADO ✓' : 'REPROBADO ✗';
+        document.getElementById('scoreBadge').textContent = aprobado ? 'APROBADO' : 'REPROBADO';
         document.getElementById('scoreBadge').className = 'success-badge ' + (aprobado ? 'badge-aprobado' : 'badge-reprobado');
 
-        var detallesHTML = '<h3 style="margin-bottom:15px;">📊 Detalles de la Evaluación</h3>';
-        detallesHTML += '<p><strong>Nombre:</strong> ' + formData.nombre + '</p>';
-        detallesHTML += '<p><strong>Cédula:</strong> ' + formData.cedula + '</p>';
-        detallesHTML += '<p><strong>Empresa:</strong> ' + formData.empresa + '</p>';
+        var detallesHTML = '<h3 style="margin-bottom:15px;">Detalles de la Evaluacion</h3>';
+        detallesHTML += '<p><strong>Nombre:</strong> ' + document.getElementById('nombre').value + '</p>';
+        detallesHTML += '<p><strong>Cedula:</strong> ' + document.getElementById('cedula').value + '</p>';
+        detallesHTML += '<p><strong>Empresa:</strong> ' + document.getElementById('empresa').value + '</p>';
         detallesHTML += '<p style="margin-top:10px;"><strong>Respuestas correctas:</strong> ' + correctas + ' de 10</p>';
-        detallesHTML += '<p><strong>Nota mínima requerida:</strong> 80%</p>';
+        detallesHTML += '<p><strong>Nota minima requerida:</strong> 80%</p>';
         detallesHTML += '<hr style="margin:15px 0;">';
         detallesHTML += '<p style="color:' + (aprobado ? '#2ecc71' : '#e74c3c') + '; font-weight:bold;">' +
-            (aprobado ? '¡Felicitaciones! Has aprobado la evaluación de seguridad.' :
-             'No alcanzaste la nota mínima del 80%. Debes repasar los conceptos y volver a realizar la evaluación.') + '</p>';
+            (aprobado ? 'Felicitaciones! Has aprobado la evaluacion de seguridad.' :
+             'No alcanzaste la nota minima del 80%. Debes repasar los conceptos y volver a realizar la evaluacion.') + '</p>';
         document.getElementById('scoreDetails').innerHTML = detallesHTML;
 
     }).catch(function(error) {
-        console.error('Error:', error);
         loading.style.display = 'none';
-        alert('Error al enviar. Por favor intenta nuevamente.');
         submitBtn.disabled = false;
-        submitBtn.textContent = '✓ Enviar Evaluación';
+        submitBtn.textContent = 'Enviar Evaluacion';
     });
 });
 </script>
