@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -398,7 +400,6 @@ form.addEventListener('submit', function(e) {
     var porcentaje = (correctas / 10) * 100;
     var aprobado = porcentaje >= 80;
 
-    
     var preguntasRealizadasIDs = [];
     var preguntasFalladasIDs = [];
 
@@ -420,8 +421,6 @@ form.addEventListener('submit', function(e) {
     formDataToSend.append('calificacion', aprobado ? 'APROBADO' : 'REPROBADO');
     formDataToSend.append('preguntas_realizadas', preguntasRealizadasIDs.join(', '));
     formDataToSend.append('preguntas_falladas', preguntasFalladasIDs.length > 0 ? preguntasFalladasIDs.join(', ') : 'Ninguna');
-
-
 
     fetch(GOOGLE_SCRIPT_URL, {
         method: 'POST',
@@ -458,3 +457,4 @@ form.addEventListener('submit', function(e) {
 </script>
 </body>
 </html>
+
