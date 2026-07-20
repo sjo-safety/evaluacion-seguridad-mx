@@ -102,7 +102,7 @@
 </div>
 
 <script>
-var GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyBultyXPZwV23bHfc8OSQA1QD-V1Fhc6BaS6L9NGzbQJ8VEwV7hXDxFp8JnpS5jSh8sw/exec';
+var GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbw3PiCmTxUwy7dLCLj_Ya8Rr894-GSQ6YnlRRKhcUMoChL1vkjWj7vptyQUJUI50IG9CQ/exec';
 
 function mezclar(arr) {
     var a = arr.slice();
@@ -398,6 +398,17 @@ form.addEventListener('submit', function(e) {
     var porcentaje = (correctas / 10) * 100;
     var aprobado = porcentaje >= 80;
 
+    
+    var preguntasRealizadasIDs = [];
+    var preguntasFalladasIDs = [];
+
+    for (var i = 0; i < preguntasRenderizadas.length; i++) {
+        preguntasRealizadasIDs.push(preguntasRenderizadas[i].id);
+        if (!respuestasDetalle[i].es_correcta) {
+            preguntasFalladasIDs.push(preguntasRenderizadas[i].id);
+        }
+    }
+
     var formDataToSend = new FormData();
     formDataToSend.append('timestamp', new Date().toLocaleString('es-CR', {timeZone: 'America/Costa_Rica'}));
     formDataToSend.append('nombre', document.getElementById('nombre').value);
@@ -407,6 +418,10 @@ form.addEventListener('submit', function(e) {
     formDataToSend.append('puntaje', correctas + '/10');
     formDataToSend.append('porcentaje', porcentaje.toFixed(1) + '%');
     formDataToSend.append('calificacion', aprobado ? 'APROBADO' : 'REPROBADO');
+    formDataToSend.append('preguntas_realizadas', preguntasRealizadasIDs.join(', '));
+    formDataToSend.append('preguntas_falladas', preguntasFalladasIDs.length > 0 ? preguntasFalladasIDs.join(', ') : 'Ninguna');
+
+
 
     fetch(GOOGLE_SCRIPT_URL, {
         method: 'POST',
